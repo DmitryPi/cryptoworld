@@ -30,6 +30,8 @@ function pathsConfig(appName) {
     vendorsJs: [
       `${vendorsRoot}/htmx.org/dist/htmx.js`,
       `${vendorsRoot}/htmx.org/dist/ext/debug.js`,
+      `${vendorsRoot}/htmx.org/dist/ext/event-header.js`,
+      `${vendorsRoot}/htmx.org/dist/ext/ajax-header.js`,
     ],
     app: this.app,
     templates: `${this.app}/templates`,

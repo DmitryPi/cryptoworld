@@ -32,7 +32,7 @@
 
   </head>
 
-  <body>
+  <body hx-ext="debug, event-header">
 
     <div class="mb-1">
       <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -78,7 +78,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container" hx-ext="debug">
 
       {% if messages %}
         {% for message in messages %}
