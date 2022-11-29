@@ -24,8 +24,8 @@ if __name__ == "__main__":
         raise
 
     # This allows easy placement of apps within the interior
-    # crypto_world directory.
+    # cryptoworld directory.
     current_path = Path(__file__).parent.resolve()
-    sys.path.append(str(current_path / "crypto_world"))
+    sys.path.append(str(current_path / "cryptoworld"))
 
     execute_from_command_line(sys.argv)

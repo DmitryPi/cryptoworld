@@ -1,6 +1,6 @@
-# Crypto World
+# CryptoWorld
 
-Behold My Awesome Project!
+Smart crypto analytics with django, htmx, sass. Possible crypto trade bot as a service in the future.
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
@@ -25,7 +25,7 @@ For convenience, you can keep your normal user logged in on Chrome and your supe
 
 Running type checks with mypy:
 
-    $ mypy crypto_world
+    $ mypy cryptoworld
 
 ### Test coverage
 
@@ -50,7 +50,7 @@ This app comes with Celery.
 To run a celery worker:
 
 ``` bash
-cd crypto_world
+cd cryptoworld
 celery -A config.celery_app worker -l info
 ```
 

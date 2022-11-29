@@ -270,7 +270,7 @@ Session.vim
 tags
 
 ### Project template
-crypto_world/media/
+cryptoworld/media/
 
 .pytest_cache/
 .ipython/

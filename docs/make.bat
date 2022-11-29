@@ -10,7 +10,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=_source
 set BUILDDIR=_build
-set APP=..\crypto_world
+set APP=..\cryptoworld
 
 if "%1" == "" goto help
 

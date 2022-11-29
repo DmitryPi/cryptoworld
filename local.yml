@@ -1,16 +1,16 @@
 version: '3'
 
 volumes:
-  crypto_world_local_postgres_data: {}
-  crypto_world_local_postgres_data_backups: {}
+  cryptoworld_local_postgres_data: {}
+  cryptoworld_local_postgres_data_backups: {}
 
 services:
   django: &django
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: crypto_world_local_django
-    container_name: crypto_world_local_django
+    image: cryptoworld_local_django
+    container_name: cryptoworld_local_django
     depends_on:
       - postgres
       - redis
@@ -28,17 +28,17 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: crypto_world_production_postgres
-    container_name: crypto_world_local_postgres
+    image: cryptoworld_production_postgres
+    container_name: cryptoworld_local_postgres
     volumes:
-      - crypto_world_local_postgres_data:/var/lib/postgresql/data:Z
-      - crypto_world_local_postgres_data_backups:/backups:z
+      - cryptoworld_local_postgres_data:/var/lib/postgresql/data:Z
+      - cryptoworld_local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
 
   docs:
-    image: crypto_world_local_docs
-    container_name: crypto_world_local_docs
+    image: cryptoworld_local_docs
+    container_name: cryptoworld_local_docs
     build:
       context: .
       dockerfile: ./compose/local/docs/Dockerfile
@@ -47,25 +47,25 @@ services:
     volumes:
       - ./docs:/docs:z
       - ./config:/app/config:z
-      - ./crypto_world:/app/crypto_world:z
+      - ./cryptoworld:/app/cryptoworld:z
     ports:
       - "9000:9000"
     command: /start-docs
 
   mailhog:
     image: mailhog/mailhog:v1.0.0
-    container_name: crypto_world_local_mailhog
+    container_name: cryptoworld_local_mailhog
     ports:
       - "8025:8025"
 
   redis:
     image: redis:6
-    container_name: crypto_world_local_redis
+    container_name: cryptoworld_local_redis
 
   celeryworker:
     <<: *django
-    image: crypto_world_local_celeryworker
-    container_name: crypto_world_local_celeryworker
+    image: cryptoworld_local_celeryworker
+    container_name: cryptoworld_local_celeryworker
     depends_on:
       - redis
       - postgres
@@ -75,8 +75,8 @@ services:
 
   celerybeat:
     <<: *django
-    image: crypto_world_local_celerybeat
-    container_name: crypto_world_local_celerybeat
+    image: cryptoworld_local_celerybeat
+    container_name: cryptoworld_local_celerybeat
     depends_on:
       - redis
       - postgres
@@ -86,8 +86,8 @@ services:
 
   flower:
     <<: *django
-    image: crypto_world_local_flower
-    container_name: crypto_world_local_flower
+    image: cryptoworld_local_flower
+    container_name: cryptoworld_local_flower
     ports:
       - "5555:5555"
     command: /start-flower

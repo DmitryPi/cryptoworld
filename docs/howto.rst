@@ -4,7 +4,7 @@ How To - Project Documentation
 Get Started
 ----------------------------------------------------------------------
 
-Documentation can be written as rst files in `crypto_world/docs`.
+Documentation can be written as rst files in `cryptoworld/docs`.
 
 
 To build and serve docs, use the commands::

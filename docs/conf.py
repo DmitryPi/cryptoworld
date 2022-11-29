@@ -27,7 +27,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "Crypto World"
+project = "CryptoWorld"
 copyright = """2022, Dmitry Gupalo"""
 author = "Dmitry Gupalo"
 

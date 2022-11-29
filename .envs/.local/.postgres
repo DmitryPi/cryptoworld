@@ -2,6 +2,6 @@
 # ------------------------------------------------------------------------------
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
-POSTGRES_DB=crypto_world
-POSTGRES_USER=pXarfdPhwEfjagLBRPbXDUqcvFqhsQKb
-POSTGRES_PASSWORD=RPuAiuu5KYj1WCbI28QzOBTkoP7gF7LnfSC3VOj9PgcYq3ZtplSd18jT8SWbYJfo
+POSTGRES_DB=cryptoworld
+POSTGRES_USER=NRHybxzXloHhBbEsEiRsqeRiOPEWoyYp
+POSTGRES_PASSWORD=QP43krYa1uJJtxIyPdXeek6jy8lHs0bhyq6CKU6YxgUmygo2eHgWeESDD9BHO5QF

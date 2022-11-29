@@ -1,9 +1,9 @@
-.. Crypto World documentation master file, created by
+.. CryptoWorld documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Crypto World's documentation!
+Welcome to CryptoWorld's documentation!
 ======================================================================
 
 .. toctree::
