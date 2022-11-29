@@ -1,4 +1,6 @@
-{% load static i18n %}<!DOCTYPE html>
+{% load static i18n %}
+{% load django_htmx %}
+<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -17,19 +19,14 @@
     <!-- Your stuff: Third-party CSS libraries go here -->
 
     <!-- This file stores project-specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
     {% endblock %}
     <!-- Le javascript
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
     {% block javascript %}
-      <!-- Bootstrap JS -->
-      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <!-- Your stuff: Third-party javascript libraries go here -->
-
-      <!-- place project specific Javascript in this file -->
-      <script defer src="{% static 'js/project.js' %}"></script>
-
+      <script defer src="{% static 'js/vendors.min.js' %}"></script>
+      <script defer src="{% static 'js/project.min.js' %}"></script>
     {% endblock javascript %}
 
   </head>
@@ -93,6 +90,9 @@
 
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
+         <button hx-post="/clicked" hx-swap="outerHTML">
+          Click Me
+        </button>
       {% endblock content %}
 
     </div> <!-- /container -->
