@@ -1,5 +1,5 @@
-{% load static i18n %}
 {% load django_htmx %}
+{% load static i18n %}
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
@@ -25,6 +25,9 @@
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
     {% block javascript %}
+      <script defer src="{% static 'js/htmx/htmx.js' %}"></script>
+      <script defer src="{% static 'js/htmx/debug.js' %}"></script>
+      {% django_htmx_script %}
       <script defer src="{% static 'js/vendors.min.js' %}"></script>
       <script defer src="{% static 'js/project.min.js' %}"></script>
     {% endblock javascript %}
@@ -90,9 +93,8 @@
 
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
-         <button hx-post="/clicked" hx-swap="outerHTML">
-          Click Me
-        </button>
+         <button hx-post="/clicked" hx-swap="outerHTML">Click Me</button>
+        <button hx-ext="debug">Debug Me...</button>
       {% endblock content %}
 
     </div> <!-- /container -->
