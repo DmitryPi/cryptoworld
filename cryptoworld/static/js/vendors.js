@@ -1,4 +1,4 @@
-/* HTMX */
+/* HTMX v1.8.4 */
 //AMD insanity
 (function (root, factory) {
     //@ts-ignore
